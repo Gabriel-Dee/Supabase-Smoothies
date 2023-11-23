@@ -5,7 +5,7 @@ const SmoothieCard = ({ smoothie }) => {
 
   const handleDelete = async () => {
     const { data, error } = await supabase
-      .from('recipes')
+      .from('smoothies')
       .delete()
       .eq('id', smoothie.id)
       // .select() //for version 2
