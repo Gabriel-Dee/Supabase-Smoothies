@@ -10,6 +10,8 @@ const SmoothieCard = ({ smoothie }) => {
       .eq('id', smoothie.id)
       // .select() //for version 2
     
+    console.log(data)
+
     if (error) {
       console.log(error)
     }
