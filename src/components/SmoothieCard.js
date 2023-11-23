@@ -7,19 +7,20 @@ const SmoothieCard = ({ smoothie, onDelete}) => {
     const { data, error } = await supabase
       .from('smoothies')
       .delete()
-      .eq('id', smoothie.id)
-      // .select() //for version 2
-    
-    console.log(data)
-
+      .eq('id', smoothie.id);
+  
     if (error) {
-      console.log(error)
-    }
-    if (data) {
-      console.log(data)
-      onDelete(smoothie.id)
+      console.error(error);
+    } else {
+      // Log a success message or perform any other necessary actions
+      console.log('Smoothie deleted successfully');
+      console.log(data);
+      
+      // Call a callback function (onDelete) if needed
+      onDelete(smoothie.id);
     }
   }
+  
 
   return (
     <div className="smoothie-card">
