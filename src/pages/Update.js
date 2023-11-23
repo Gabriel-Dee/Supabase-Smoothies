@@ -24,6 +24,7 @@ const Update = () => {
       .from('smoothies')
       .update({ title, method, rating })
       .eq('id', id);
+      // .select() //for rversion 2
   
     if (updateError) {
       setFormError('Error updating the smoothie.');
